@@ -150,9 +150,9 @@ client.on("message", message => {
       .setColor("RANDOM")
   .addField("**<a:2222:603662095791423499> | mc.hypixel.net  | #1**")
 
-  .addField("**<a:2222:603662095791423499> | play.cubecraft.net  | #2")
+  .addField("**<a:2222:603662095791423499> | play.cubecraft.net  | #2**")
   
-  .addField("**<a:2222:603662095791423499> | mineheroes.net  | #3")
+  .addField("**<a:2222:603662095791423499> | mineheroes.net  | #3**")
   
   
    message.channel.sendMessage({embed});
@@ -188,8 +188,8 @@ client.on("message", message => {
                             .setAuthor(message.author.username,message.author.avatarURL)
                             .setThumbnail('https://cdn.discordapp.com/avatars/368141321547808768/c42716e13cb850f9ad0930af699472d0.png?size=2048nk')
                             .setColor('RANDOM')
-                            .addField('**BoT Ping:**',msg + " ms")
-                            .addField('**Your Ping:**',api + " ms")
+                            .addField('**<a:7777:603702087590739968> | BoT Ping:**',msg + " ms")
+                            .addField('**<a:7777:603702087590739968> | Your Ping:**',api + " ms")
                       message.channel.send({embed:embed});
                             }
                         });
@@ -305,7 +305,7 @@ client.on("message", message => {
                            if (message.content === "b!serversbot") {
                            let embed = new Discord.RichEmbed()
                         .setColor("RANDOM")
-                        .addField("**✺【 Servers :  】✺**" , client.guilds.size)
+                        .addField("**✺【 <a:7777:603702087590739968> | Servers :  】✺**" , client.guilds.size)
                         message.channel.sendEmbed(embed);
                           }
                         });
@@ -336,7 +336,7 @@ client.on("message", message => {
                               message.guild.members.forEach(m => {
                          if(!message.member.hasPermission('ADMINISTRATOR')) return;
                                   var bc = new Discord.RichEmbed()
-                                  .addField("**<a:6666:603665822631723209> | New BroadCast ")
+                                  .addField("**<a:6666:603665822631723209> | New BroadCast **")
                                   .addField('***» ✠✚【 Server Name 】✚✠ :***', `${message.guild.name}`)
                                   .addField('***» ✠✚【 Sender 】✚✠ :*** ', `${message.author.username}#${message.author.discriminator}`)
                                   .addField('***» ✠✚【 Message 】✚✠ :*** ', args)
@@ -451,7 +451,7 @@ client.on("message", message => {
                                                     .setAuthor(message.author.username)
                                                     .setColor("#9B59B6")
                                                     .addField("<a:5555:603662381490634782> | Support Server : https://discordapp.com/invite/nsJXpZV ")
-                                                    .addField("<a:3333:603662179660726282> | Owner : iTz Moh M Y#1445 ")
+                                                    .addField("<a:7777:603702087590739968> | Owner : iTz Moh M Y#1445 ")
 
 
 
@@ -465,8 +465,12 @@ client.on("message", message => {
                                                     .setAuthor(message.author.username)
                                                     .setColor("#9B59B6")
                                                     .addField("<a:5555:603662381490634782> |  Support Server : https://discordapp.com/invite/nsJXpZV ")
+                                                       
                                                     .addField("<a:3333:603662179660726282> | Owner : iTz Moh M Y#1445 ")
+                                                       
                                                     .addField("<a:4444:603662239257329677> | Invite BoT : https://discordapp.com/api/oauth2/authorize?client_id=602186301953015818&permissions=8&scope=bot")
+                                                       
+                                                    .addField("<a:7777:603702087590739968> | BOT COMMANDS : b!")
 
 
 
