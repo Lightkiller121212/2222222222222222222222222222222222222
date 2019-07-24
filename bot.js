@@ -194,7 +194,7 @@ client.on("message", message => {
 
                         client.on("message", (message) => {
                           if (message.content.startsWith('b!delete')) {
-                              if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply(" ✺【 Your Don,t Have Permission To Delete This Room 】✺ ");
+                              if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply(" ✺【 You Don,t Have Permission To Delete This Room 】✺ ");
 
                               let args = message.content.split(' ').slice(1);
                               let channel = message.client.channels.find('name', args.join(' '));
@@ -308,12 +308,13 @@ client.on("message", message => {
                           let args = message.content.split(' ').slice(1).join(' ');
                       if(message.content.split(' ')[0] == prefix + 'bc') {
                           if (!args[1]) {
-                      message.channel.send("**Start Witch : b!bc <message>**");
+                      message.channel.send("**<a:6666:603665822631723209> | Start Witch : b!bc <message>**");
                       return;
                       }
                               message.guild.members.forEach(m => {
                          if(!message.member.hasPermission('ADMINISTRATOR')) return;
                                   var bc = new Discord.RichEmbed()
+                                  .addField("**<a:6666:603665822631723209> | New BroadCast ")
                                   .addField('***» ✠✚【 Server Name 】✚✠ :***', `${message.guild.name}`)
                                   .addField('***» ✠✚【 Sender 】✚✠ :*** ', `${message.author.username}#${message.author.discriminator}`)
                                   .addField('***» ✠✚【 Message 】✚✠ :*** ', args)
@@ -361,9 +362,9 @@ client.on("message", message => {
                                 const embed = new Discord.RichEmbed()
                                 .setColor('RANDOM')
                                 .addField(`${message.guild.name}`,`**Server Rooms:white_check_mark:**`)
-                                .addField(':arrow_down: ✺【 Rooms Number 】✺ <a:3333:602171235815653396> ',`** ${message.guild.channels.size}**`)
+                                .addField(':arrow_down: ✺【 Rooms Number 】✺ <a:4444:603662239257329677> ',`** ${message.guild.channels.size}**`)
 
-                        .addField(':arrow_down: ✺【 All Rooms 】✺ <a:3333:602171235815653396> ',`**[${channels}]**`)
+                        .addField(':arrow_down: ✺【 All Rooms 】✺ <a:4444:603662239257329677> ',`**[${channels}]**`)
                                 message.channel.sendEmbed(embed);
                             }
                         });
@@ -402,7 +403,7 @@ client.on("message", message => {
                                                                               message.channel.fetchMessages({limit: messagecount}).then(messages => message.channel.bulkDelete(messages));
                                                                               let x5bz2 = new Discord.RichEmbed()
                                                                                                               .setColor("#008000")
-                                                                                  .setDescription("<a:3333:602171235815653396> " + args[1] + " Message Has Been Deleted")
+                                                                                  .setDescription("<a:4444:603662239257329677> " + args[1] + " Message Has Been Deleted")
                                                                                                                                           message.delete("..");
                                                                                   message.channel.sendEmbed(x5bz2);
                                                                               }
@@ -427,8 +428,8 @@ client.on("message", message => {
                                                        let embed = new Discord.RichEmbed()
                                                     .setAuthor(message.author.username)
                                                     .setColor("#9B59B6")
-                                                    .addField(" Support Server : https://discordapp.com/invite/nsJXpZV ")
-                                                    .addField(" Owner : iTz Moh M Y#1445 ")
+                                                    .addField("<a:5555:603662381490634782> | Support Server : https://discordapp.com/invite/nsJXpZV ")
+                                                    .addField("<a:3333:603662179660726282> | Owner : iTz Moh M Y#1445 ")
 
 
 
@@ -441,9 +442,9 @@ client.on("message", message => {
                                                        let embed = new Discord.RichEmbed()
                                                     .setAuthor(message.author.username)
                                                     .setColor("#9B59B6")
-                                                    .addField(" Support Server : https://discordapp.com/invite/nsJXpZV ")
-                                                    .addField(" Owner : iTz Moh M Y#1445 ")
-                                                    .addField("Invite BoT : https://discordapp.com/api/oauth2/authorize?client_id=602186301953015818&permissions=8&scope=bot")
+                                                    .addField("<a:5555:603662381490634782> |  Support Server : https://discordapp.com/invite/nsJXpZV ")
+                                                    .addField("<a:3333:603662179660726282> | Owner : iTz Moh M Y#1445 ")
+                                                    .addField("<a:4444:603662239257329677> | Invite BoT : https://discordapp.com/api/oauth2/authorize?client_id=602186301953015818&permissions=8&scope=bot")
 
 
 
@@ -456,13 +457,13 @@ client.on("message", message => {
                                                        let embed = new Discord.RichEmbed()
                                                     .setAuthor(message.author.username)
                                                     .setColor("#9B59B6")
-                                                    .addField(" **b!skin [name]  |  To Show Your Skin On MineCraft | لعرض سكنك في ماين كرافت** ")
+                                                    .addField(" **<a:2222:603662095791423499> | b!skin [name]  |  To Show Your Skin On MineCraft | لعرض سكنك في ماين كرافت** ")
 
-                                                    .addField(" **b!head [name]  |  To Show Your Skin Head On MineCraft | لعرض رأس سكنك في ماين كرافت** ")
+                                                    .addField(" **<a:2222:603662095791423499> | b!head [name]  |  To Show Your Skin Head On MineCraft | لعرض رأس سكنك في ماين كرافت** ")
 
-                                                    .addField(" **b!armor [name] |  To Show Your Skin Armor On MineCraft | لعرض ثيابك في ماين كرافت**")
+                                                    .addField(" **<a:2222:603662095791423499> | b!armor [name] |  To Show Your Skin Armor On MineCraft | لعرض ثيابك في ماين كرافت**")
 
-                                                    .addField(" **b!download [name] |  To Download Your Skin | لتحميل سكنك في ماين كرافت**")
+                                                    .addField(" **<a:2222:603662095791423499> | b!download [name] |  To Download Your Skin | لتحميل سكنك في ماين كرافت**")
 
                                                     message.channel.sendEmbed(embed);
                                                       }
@@ -888,71 +889,6 @@ reaction2.on("collect", r => {
       message.channel.send("** <a:3333:602171235815653396> | Room Has Been Created **")
               }
   })
-
-client.on("message", (message) => {
-  let men = message.mentions.users.first()
- 
-  if (message.author.bot) return;
-    if (message.author.id === client.user.id) return;
-    if(!message.channel.guild) return;
-if (message.content.startsWith(prefix + 'credit')) {
-  if(men) {
-    if (!profile[men.id]) profile[men.id] = {
-    lastDaily:'Not Collected',
-    credits: 1,
-  };
-  }
-  if(men) {
-message.channel.send(`** ${men.username}, :credit_card: balance` + " is `" + `${profile[men.id].credits}$` + "`.**")
-} else {
-  message.channel.send(`** ${message.author.username}, your :credit_card: balance` + " is `" + `${profile[message.author.id].credits}$` + "`.**")
-}
-}
- 
-if(message.content.startsWith(prefix + "daily")) {
-  if(profile[message.author.id].lastDaily != moment().format('day')) {
-    profile[message.author.id].lastDaily = moment().format('day')
-    profile[message.author.id].credits += 200
-     message.channel.send(`**${message.author.username} you collect your \`200\` :dollar: daily pounds**`)
-} else {
-    message.channel.send(`**:stopwatch: | ${message.author.username}, your daily :yen: credits refreshes ${moment().endOf('day').fromNow()}**`)
-}
-  }
-
- 
- let cont = message.content.slice(prefix.length).split(" ");
-let args = cont.slice(1);
-let sender = message.author
-if(message.content.startsWith(prefix + 'trans')) {
-          if (!args[0]) {
-            message.channel.send(`**Usage: ${prefix}trans @someone amount**`);
-         return;
-           }
-        // We should also make sure that args[0] is a number
-        if (isNaN(args[0])) {
-            message.channel.send(`**Usage: ${prefix}trans @someone amount**`);
-            return; // Remember to return if you are sending an error message! So the rest of the code doesn't run.
-             }
-            let defineduser = '';
-            let firstMentioned = message.mentions.users.first();
-            defineduser = (firstMentioned)
-            if (!defineduser) return message.channel.send(`**Usage: ${prefix}trans @someone amount**`);
-            var mentionned = message.mentions.users.first();
-if (!profile[sender.id]) profile[sender.id] = {}
-if (!profile[sender.id].credits) profile[sender.id].credits = 200;
-fs.writeFile('profile.json', JSON.stringify(profile), (err) => {
-if (err) console.error(err);
-})
-      var mando = message.mentions.users.id;
-      if  (!profile[defineduser.id]) profile[defineduser.id] = {}
-      if (!profile[defineduser.id].credits) profile[defineduser.id].credits = 200;
-      profile[defineduser.id].credits += (+args[0]);
-      profile[sender.id].credits += (-args[0]);
-      let mariam = message.author.username
-message.channel.send(`**:moneybag: | ${message.author.username}, has transferrerd ` + "`" + args[0] + "$` to " + `<@${defineduser.id}>**`)
-}
- 
-      });
 
 client.login(process.env.BOT_TOKEN);
 
