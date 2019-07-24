@@ -138,6 +138,19 @@ client.on("message", message => {
                         }
                         });
 
+client.on("message", message => {
+
+     if(!message.channel.guild) return;
+
+ if (message.content === "b!minecraft-servers") {
+   message.react("<a:3333:602171235815653396>")
+  const embed = new Discord.RichEmbed()
+      .setColor("RANDOM")
+  .addField("**<a:2222:603662095791423499> | mc.hypixel.net  | #1**")
+
+  .addField("**<a:2222:603662095791423499> | play.cubecraft.net  | #2")
+  
+  .addField("**<a:2222:603662095791423499> | mineheroes.net  | #3")
                         client.on('message', message => {
                             if (message.content.startsWith("b!avatar")) {
                                 var mentionned = message.mentions.users.first();
