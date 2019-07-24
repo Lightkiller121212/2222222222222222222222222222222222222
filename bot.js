@@ -132,6 +132,8 @@ client.on("message", message => {
                         .addField("✺【 b!اقتراح | Create suggest | انشاء اقتراح  】✺")
 
                         .addField("✺【 b!Rainbow | Create Rainbow Role | انشاء رتبة ملونة 】✺")
+                    
+                        .addField("✺【 b!minecraft-servers | To Show Servers On MineCraft | لعرض سيرفرات ماين كرافت】✺")
 
                         message.channel.sendMessage({embed});
 
@@ -151,6 +153,13 @@ client.on("message", message => {
   .addField("**<a:2222:603662095791423499> | play.cubecraft.net  | #2")
   
   .addField("**<a:2222:603662095791423499> | mineheroes.net  | #3")
+  
+  
+   message.channel.sendMessage({embed});
+
+                        }
+                        });
+  
                         client.on('message', message => {
                             if (message.content.startsWith("b!avatar")) {
                                 var mentionned = message.mentions.users.first();
