@@ -912,5 +912,18 @@ reaction2.on("collect", r => {
               }
   })
 
+client.on('message', message =>{
+  if(message.content.startsWith(prefix + 'add')) {
+    if(!message.member.hasPermission('MANAGE_EMOJIS')) return message.channel.send(`you Don't have **MANAGE_EMOJIS** premission :x:`)
+    let args = message.content.split(" ").slice(1).join(" ");
+    if(!args) return message.channel.send('**Please type the emoji ID after the command!**')
+    if(args.length < "18" || args.length > "18") return message.channel.send(`**Please Type the Emoji ID correct**`)
+    message.guild.createEmoji(`https://cdn.discordapp.com/emojis/${args}.png`, `${args}`).then(mysterry => {
+
+    message.channel.send(`**Successfully Added { ${mysterry} } To The Emojilist**`)
+  }).catch(mystery => {message.channel.send(`**The Emoji ID is Wrong** 💢`)})
+  }
+});
+
 client.login(process.env.BOT_TOKEN);
 
