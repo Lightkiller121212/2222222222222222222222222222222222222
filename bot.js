@@ -48,11 +48,11 @@ client.on("message", message => {
             .setColor("RANDOM")
             .addField("✵-「Admin Commands")
 
-            .addField("✺【 b!ban  | To Ban Member | لحظر عضو 】✺")
+            .addField("✺【 b!ban  | To Ban Member | لحظر عضو من السيرفر 】✺")
 
-            .addField("✺【 b!kick | To Kick Member | لطرد عضو 】✺")
+            .addField("✺【 b!kick | To Kick Member | لطرد عضو من االسيرفر 】✺")
 
-            .addField("✺【 b!clear | To Clear Chat | لحذف الشات 】✺")
+            .addField("✺【 b!clear | To Clear Chat | لحذف الشات بعدد 】✺")
 
             .addField("✺【 b!bc  | To Send BroadCast | لارسال رسالة للجميع 】✺")
 
