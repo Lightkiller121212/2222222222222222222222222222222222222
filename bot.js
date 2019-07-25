@@ -196,7 +196,7 @@ client.on("message", message => {
 
                         client.on("message", (message) => {
                         if (message.content.startsWith("b!createtext")) {
-                                    if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply(" ✺【 You Don,t Have Permission To Create Channel Text 】✺ ");
+                                    if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply(" ✺【 <a:123456:603970231408394260> | You Don,t Have Permission To Create Channel Text 】✺ ");
                                 let args = message.content.split(" ").slice(1);
                             message.guild.createChannel(args.join(' '), 'text');
                         message.channel.sendMessage('✺【 <a:3333:602171235815653396> | The Room Has Been Created | تم انشاء الروم 】✺')
@@ -206,7 +206,7 @@ client.on("message", message => {
 
                         client.on("message", (message) => {
                         if (message.content.startsWith("b!createvoice")) {
-                                    if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply(" ✺【 You Don,t Have Permission To Create Channel Voice 】✺ ");
+                                    if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply(" ✺【 <a:123456:603970231408394260> | You Don,t Have Permission To Create Channel Voice 】✺ ");
                                 let args = message.content.split(" ").slice(1);
                             message.guild.createChannel(args.join(' '), 'voice');
                             message.channel.sendMessage('✺【 <a:3333:602171235815653396> | The Room Has Been Created | تم انشاء الروم 】✺')
@@ -216,7 +216,7 @@ client.on("message", message => {
 
                         client.on("message", (message) => {
                           if (message.content.startsWith('b!delete')) {
-                              if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply(" ✺【 You Don,t Have Permission To Delete This Room 】✺ ");
+                              if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply(" ✺【 <a:123456:603970231408394260> | You Don,t Have Permission To Delete This Room 】✺ ");
 
                               let args = message.content.split(' ').slice(1);
                               let channel = message.client.channels.find('name', args.join(' '));
@@ -288,7 +288,7 @@ client.on("message", message => {
 
                         client.on('message', (message) => {
                           if (message.content.startsWith('b!ban ')) {
-                            if(!message.member.hasPermission('BAN_MEMBERS')) return message.reply('✠✚【 This Command For ADMINISTRATOR 】✚✠');
+                            if(!message.member.hasPermission('BAN_MEMBERS')) return message.reply('✠✚【 <a:123456:603970231408394260> | This Command For ADMINISTRATOR 】✚✠');
                               var member= message.mentions.members.first();
                               member.ban().then((member) => {
                                message.channel.send(member.displayName + '✺【 <a:3333:602171235815653396> | The Member Has Been Banned Form The Server 】✺');
@@ -500,7 +500,7 @@ client.on("message", message => {
                                             if (message.content.startsWith("b!armor")) {
                                         if(!message.channel.guild) return;
                                                       let armor = message.content.split(' ').slice(1).join(' ');
-                                                      if (!armor) return message.channel.send("**Plez Type Your name ON MineCraft**");
+                                                      if (!armor) return message.channel.send("**<a:123456:603970231408394260> | Type Your Name **");
                                                       var link = (`https://minotar.net/armor/bust/${armor}/100.png`);
                                                 const embed = new Discord.RichEmbed()
                                                                    .addField('Done!', "Your McSkin Armor:")
@@ -513,7 +513,7 @@ client.on("message", message => {
                                             if (message.content.startsWith("b!download")) {
                                         if(!message.channel.guild) return;
                                                       let down = message.content.split(' ').slice(1).join(' ');
-                                                      if (!down) return message.channel.send("**Plez Type Your name ON MineCraft**");
+                                                      if (!down) return message.channel.send("**<a:123456:603970231408394260> | Type Your name**");
                                                       var link = (`https://minotar.net/download/${down}  Download Your Skin Link | Click To Open Link :`);
                                                 const embed = new Discord.RichEmbed()
                                                                    .addField('Done!', "Download Your Skin Link :")
@@ -527,7 +527,7 @@ client.on("message", message => {
                                             if (message.content.startsWith("b!skin")) {
                                         if(!message.channel.guild) return;
                                                       let skin = message.content.split(' ').slice(1).join(' ');
-                                                      if (!skin) return message.channel.send("**Plez Type Your name ON MineCraft**");
+                                                      if (!skin) return message.channel.send("**<a:123456:603970231408394260> | Type Your name**");
                                                       var link = (`https://minotar.net/armor/body/${skin}/100.png`);
                                                 const embed = new Discord.RichEmbed()
                                                                    .addField('Done!', "Your Skin On MineCraft:")
@@ -541,7 +541,7 @@ client.on("message", message => {
                                             if (message.content.startsWith("b!head")) {
                                         if(!message.channel.guild) return;
                                                       let head = message.content.split(' ').slice(1).join(' ');
-                                                      if (!head) return message.channel.send("**Plez Type Your name ON MineCraft**");
+                                                      if (!head) return message.channel.send("**<a:123456:603970231408394260> | Type Your name**");
                                                       var link = (`https://minotar.net/helm/${head}/100.png`);
                                                 const embed = new Discord.RichEmbed()
                                                                    .addField('Done!', "Your Skin Head :")
@@ -616,7 +616,7 @@ client.on("message", message => {
                                         client.on('guildCreate', guild => {
   const embed = new Discord.RichEmbed()
    .setColor("GREEN")
-   .setTitle(`** ✵-「Server Added [/] ANFREN BOT**`)
+   .setTitle(`** ✵-「Server <a:4444:603662239257329677> [/] ANFREN BOT**`)
    .setDescription(`**
     ✵-「__Server Name__ → ${guild.name}
     ✵-「__Server Owner__ → ${guild.owner}
@@ -628,7 +628,7 @@ client.channels.get("602286317526581259").sendEmbed(embed)
 client.on('guildDelete', guild => {
   const embed = new Discord.RichEmbed()
    .setColor("RED")
-   .setTitle(`**✵-「Server Remove [/] ANFREN BOT`)
+   .setTitle(`**✵-「Server <a:123456:603970231408394260> [/] ANFREN BOT`)
    .setDescription(`**
      ✵-「__Server Name__ → ${guild.name}
      ✵-「__Server Owner__ → ${guild.owner}
@@ -647,9 +647,9 @@ client.on('message', message => {
     if(message.content.startsWith(prefix + 'اقتراح')) {
         if(message.author.bot) return;
         if(!message.guild.channels.find('name', '✵-「suggest')) return message.channel.send('**نرجو عمل روم باسم ✵-「suggest**').then(msg => msg.delete(5000));
-    if(!name1) return message.reply('**منشن نفسك**').then(msg => msg.delete(3000))
+    if(!name1) return message.reply('**اسمك ؟**').then(msg => msg.delete(3000))
         message.delete();
-    if(!suggest) return message.reply('**😇اكتب الاقتراح😇**').then(msg => msg.delete(3000))
+    if(!suggest) return message.reply('**اكتب الاقتراح هنا .**').then(msg => msg.delete(3000))
         message.delete();
     var abod = new Discord.RichEmbed()
     .setTitle(`**الاقتراح**`)
@@ -659,7 +659,7 @@ client.on('message', message => {
     .setFooter(`${message.author.username}#${message.author.discriminator}`, message.author.avatarURL)
     .setTimestamp()
         message.guild.channels.find('name', '✵-「suggest').sendEmbed(abod)
-    message.reply('**😎بنشوف اقتراحك😎**').then(msg => msg.delete(3000));
+    message.reply('**بنشوف اقتراحك**').then(msg => msg.delete(3000));
     }
 });
 
@@ -866,7 +866,7 @@ reaction2.on("collect", r => {
 
                             })
                   })
-      message.channel.send("**✅ تم انشاء روم التقديمات بنجاح**")
+      message.channel.send("**<a:4444:603662239257329677> | تم انشاء روم التقديمات بنجاح**")
               }
               })
       client.on('message',async message => {
