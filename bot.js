@@ -199,7 +199,7 @@ client.on("message", message => {
                                     if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply(" ✺【 <a:123456:603970231408394260> | You Don,t Have Permission To Create Channel Text 】✺ ");
                                 let args = message.content.split(" ").slice(1);
                             message.guild.createChannel(args.join(' '), 'text');
-                        message.channel.sendMessage('✺【 <a:3333:602171235815653396> | The Room Has Been Created | تم انشاء الروم 】✺')
+                        message.channel.sendMessage('✺【 <a:3333:602171235815653396> • The Room Has Been Created • تم انشاء الروم 】✺')
 
                         }
                         });
@@ -209,7 +209,7 @@ client.on("message", message => {
                                     if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply(" ✺【 <a:123456:603970231408394260> | You Don,t Have Permission To Create Channel Voice 】✺ ");
                                 let args = message.content.split(" ").slice(1);
                             message.guild.createChannel(args.join(' '), 'voice');
-                            message.channel.sendMessage('✺【 <a:3333:602171235815653396> | The Room Has Been Created | تم انشاء الروم 】✺')
+                            message.channel.sendMessage('✺【 <a:3333:602171235815653396> • The Room Has Been Created • تم انشاء الروم 】✺')
 
                         }
                         });
@@ -278,7 +278,7 @@ client.on("message", message => {
                           if (message.content.startsWith('b!kick')) {
                               var member= message.mentions.members.first();
                               member.kick().then((member) => {
-                                  message.channel.send(member.displayName + ' ✺【 <a:3333:602171235815653396> | The Member Has Been Kicked Form The Server  】✺ ');
+                                  message.channel.send(member.displayName + ' ✺【 <a:3333:602171235815653396> • The Member Has Been Kicked Form The Server  】✺ ');
                               }).catch(() => {
                                   message.channel.send(":x:");
                               });
@@ -288,11 +288,11 @@ client.on("message", message => {
 
                         client.on('message', (message) => {
                           if (message.content.startsWith('b!ban ')) {
-                            if(!message.member.hasPermission('BAN_MEMBERS')) return message.reply('✠✚【 <a:123456:603970231408394260> | This Command For ADMINISTRATOR 】✚✠');
+                            if(!message.member.hasPermission('BAN_MEMBERS')) return message.reply('✠✚【 <a:123456:603970231408394260> • This Command For ADMINISTRATOR 】✚✠');
                               var member= message.mentions.members.first();
                               member.ban().then((member) => {
-                               message.channel.send(member.displayName + '✺【 <a:3333:602171235815653396> | The Member Has Been Banned Form The Server 】✺');
-                               message.channel.send(member.displayName + '✺【 <a:3333:602171235815653396> | Thanks For Reporting It ! 】✺');
+                               message.channel.send(member.displayName + '✺【 <a:3333:602171235815653396> • The Member Has Been Banned Form The Server 】✺');
+                               message.channel.send(member.displayName + '✺【 <a:3333:602171235815653396> • Thanks For Reporting It ! 】✺');
                               }).catch(() => {
                                   message.channel.send('Error :_:');
                               });
@@ -305,7 +305,7 @@ client.on("message", message => {
                            if (message.content === "b!serversbot") {
                            let embed = new Discord.RichEmbed()
                         .setColor("RANDOM")
-                        .addField("**✺【 <a:7777:603702087590739968> | Servers :  】✺**" , client.guilds.size)
+                        .addField("**✺【 <a:7777:603702087590739968> • Servers :  】✺**" , client.guilds.size)
                         message.channel.sendEmbed(embed);
                           }
                         });
@@ -330,13 +330,13 @@ client.on("message", message => {
                           let args = message.content.split(' ').slice(1).join(' ');
                       if(message.content.split(' ')[0] == prefix + 'bc') {
                           if (!args[1]) {
-                      message.channel.send("**<a:6666:603665822631723209> | Start Witch : b!bc <message>**");
+                      message.channel.send("**<a:6666:603665822631723209> • Start With : b!bc <message>**");
                       return;
                       }
                               message.guild.members.forEach(m => {
                          if(!message.member.hasPermission('ADMINISTRATOR')) return;
                                   var bc = new Discord.RichEmbed()
-                                  .addField("**<a:6666:603665822631723209> | New BroadCast **")
+                                  .addField("**<a:6666:603665822631723209> • New BroadCast **")
                                   .addField('***» ✠✚【 Server Name 】✚✠ :***', `${message.guild.name}`)
                                   .addField('***» ✠✚【 Sender 】✚✠ :*** ', `${message.author.username}#${message.author.discriminator}`)
                                   .addField('***» ✠✚【 Message 】✚✠ :*** ', args)
@@ -425,7 +425,7 @@ client.on("message", message => {
                                                                               message.channel.fetchMessages({limit: messagecount}).then(messages => message.channel.bulkDelete(messages));
                                                                               let x5bz2 = new Discord.RichEmbed()
                                                                                                               .setColor("#008000")
-                                                                                  .setDescription("<a:4444:603662239257329677> " + args[1] + " Message Has Been Deleted")
+                                                                                  .setDescription("<a:4444:603662239257329677>  • " + args[1] + " • Message Has Been Deleted")
                                                                                                                                           message.delete("..");
                                                                                   message.channel.sendEmbed(x5bz2);
                                                                               }
@@ -450,8 +450,8 @@ client.on("message", message => {
                                                        let embed = new Discord.RichEmbed()
                                                     .setAuthor(message.author.username)
                                                     .setColor("#9B59B6")
-                                                    .addField("<a:5555:603662381490634782> | Support Server : https://discordapp.com/invite/nsJXpZV ")
-                                                    .addField("<a:7777:603702087590739968> | Owner : iTz Moh M Y#1445 ")
+                                                    .addField("<a:5555:603662381490634782> • Support Server : https://discordapp.com/invite/nsJXpZV ")
+                                                    .addField("<a:7777:603702087590739968> • Owner : iTz Moh M Y#1445 ")
 
 
 
@@ -464,13 +464,13 @@ client.on("message", message => {
                                                        let embed = new Discord.RichEmbed()
                                                     .setAuthor(message.author.username)
                                                     .setColor("#9B59B6")
-                                                    .addField("<a:5555:603662381490634782> |  Support Server : https://discordapp.com/invite/nsJXpZV ")
+                                                    .addField("<a:5555:603662381490634782> •  Support Server : https://discordapp.com/invite/nsJXpZV ")
                                                        
-                                                    .addField("<a:3333:603662179660726282> | Owner : iTz Moh M Y#1445 ")
+                                                    .addField("<a:3333:603662179660726282> • Owner : iTz Moh M Y#1445 ")
                                                        
-                                                    .addField("<a:4444:603662239257329677> | Invite BoT : https://discordapp.com/api/oauth2/authorize?client_id=602186301953015818&permissions=8&scope=bot")
+                                                    .addField("<a:4444:603662239257329677> • Invite BoT : https://discordapp.com/api/oauth2/authorize?client_id=602186301953015818&permissions=8&scope=bot")
                                                        
-                                                    .addField("<a:7777:603702087590739968> | BOT COMMANDS : b!")
+                                                    .addField("<a:7777:603702087590739968> • BOT COMMANDS : b!")
 
 
 
@@ -483,13 +483,13 @@ client.on("message", message => {
                                                        let embed = new Discord.RichEmbed()
                                                     .setAuthor(message.author.username)
                                                     .setColor("#9B59B6")
-                                                    .addField(" **<a:2222:603662095791423499> | b!skin [name]  |  To Show Your Skin On MineCraft | لعرض سكنك في ماين كرافت** ")
+                                                    .addField(" **<a:2222:603662095791423499> • b!skin [name]  • To Show Your Skin On MineCraft • لعرض سكنك في ماين كرافت** ")
 
-                                                    .addField(" **<a:2222:603662095791423499> | b!head [name]  |  To Show Your Skin Head On MineCraft | لعرض رأس سكنك في ماين كرافت** ")
+                                                    .addField(" **<a:2222:603662095791423499> • b!head [name]  •  To Show Your Skin Head On MineCraft • لعرض رأس سكنك في ماين كرافت** ")
 
-                                                    .addField(" **<a:2222:603662095791423499> | b!armor [name] |  To Show Your Skin Armor On MineCraft | لعرض ثيابك في ماين كرافت**")
+                                                    .addField(" **<a:2222:603662095791423499> • b!armor [name] •  To Show Your Skin Armor On MineCraft • لعرض ثيابك في ماين كرافت**")
 
-                                                    .addField(" **<a:2222:603662095791423499> | b!download [name] |  To Download Your Skin | لتحميل سكنك في ماين كرافت**")
+                                                    .addField(" **<a:2222:603662095791423499> • b!download [name] •  To Download Your Skin • لتحميل سكنك في ماين كرافت**")
 
                                                     message.channel.sendEmbed(embed);
                                                       }
@@ -500,7 +500,7 @@ client.on("message", message => {
                                             if (message.content.startsWith("b!armor")) {
                                         if(!message.channel.guild) return;
                                                       let armor = message.content.split(' ').slice(1).join(' ');
-                                                      if (!armor) return message.channel.send("**<a:123456:603970231408394260> | Type Your Name **");
+                                                      if (!armor) return message.channel.send("**<a:123456:603970231408394260> • Type Your Name **");
                                                       var link = (`https://minotar.net/armor/bust/${armor}/100.png`);
                                                 const embed = new Discord.RichEmbed()
                                                                    .addField('Done!', "Your McSkin Armor:")
@@ -514,9 +514,9 @@ client.on("message", message => {
                                         if(!message.channel.guild) return;
                                                       let down = message.content.split(' ').slice(1).join(' ');
                                                       if (!down) return message.channel.send("**<a:123456:603970231408394260> | Type Your name**");
-                                                      var link = (`https://minotar.net/download/${down}  Download Your Skin Link | Click To Open Link :`);
+                                                      var link = (`https://minotar.net/download/${down}  Download Your Skin Link • Click To Open Link :`);
                                                 const embed = new Discord.RichEmbed()
-                                                                   .addField('Done!', "Download Your Skin Link :")
+                                                                   .addField('Done!', " Click This Link To Download Your Skin :")
                                                                    .addField("Click To Open Url:", `${link}`)
                                                 .setColor(000000)
                                               message.channel.sendEmbed(embed);
@@ -527,7 +527,7 @@ client.on("message", message => {
                                             if (message.content.startsWith("b!skin")) {
                                         if(!message.channel.guild) return;
                                                       let skin = message.content.split(' ').slice(1).join(' ');
-                                                      if (!skin) return message.channel.send("**<a:123456:603970231408394260> | Type Your name**");
+                                                      if (!skin) return message.channel.send("**<a:123456:603970231408394260> • Type Your name**");
                                                       var link = (`https://minotar.net/armor/body/${skin}/100.png`);
                                                 const embed = new Discord.RichEmbed()
                                                                    .addField('Done!', "Your Skin On MineCraft:")
@@ -541,7 +541,7 @@ client.on("message", message => {
                                             if (message.content.startsWith("b!head")) {
                                         if(!message.channel.guild) return;
                                                       let head = message.content.split(' ').slice(1).join(' ');
-                                                      if (!head) return message.channel.send("**<a:123456:603970231408394260> | Type Your name**");
+                                                      if (!head) return message.channel.send("**<a:123456:603970231408394260> • Type Your name**");
                                                       var link = (`https://minotar.net/helm/${head}/100.png`);
                                                 const embed = new Discord.RichEmbed()
                                                                    .addField('Done!', "Your Skin Head :")
@@ -616,7 +616,7 @@ client.on("message", message => {
                                         client.on('guildCreate', guild => {
   const embed = new Discord.RichEmbed()
    .setColor("GREEN")
-   .setTitle(`** ✵-「Server <a:4444:603662239257329677> [/] ANFREN BOT**`)
+   .setTitle(`** ✵-「Server <a:4444:603662239257329677> ANFREN BOT**`)
    .setDescription(`**
     ✵-「__Server Name__ → ${guild.name}
     ✵-「__Server Owner__ → ${guild.owner}
@@ -628,7 +628,7 @@ client.channels.get("602286317526581259").sendEmbed(embed)
 client.on('guildDelete', guild => {
   const embed = new Discord.RichEmbed()
    .setColor("RED")
-   .setTitle(`**✵-「Server <a:123456:603970231408394260> [/] ANFREN BOT`)
+   .setTitle(`**✵-「Server <a:123456:603970231408394260> • ANFREN BOT`)
    .setDescription(`**
      ✵-「__Server Name__ → ${guild.name}
      ✵-「__Server Owner__ → ${guild.owner}
@@ -652,14 +652,14 @@ client.on('message', message => {
     if(!suggest) return message.reply('**اكتب الاقتراح هنا .**').then(msg => msg.delete(3000))
         message.delete();
     var abod = new Discord.RichEmbed()
-    .setTitle(`**الاقتراح**`)
-    .addField('**المقترح:**', `${name1}`, true)
-    .addField('**بروم:**', `${message.channel.name}`, true)
-    .addField('**الاقتراح:**', `${suggest}`, true)
+    .setTitle(`**: الاقتراح الذي تم اصداره •**`)
+    .addField('** : اسم المقترح •**', `${name1}`, true)
+    .addField('** : اسم الروم •**', `${message.channel.name}`, true)
+    .addField('** : الاقتراح •**', `${suggest}`, true)
     .setFooter(`${message.author.username}#${message.author.discriminator}`, message.author.avatarURL)
     .setTimestamp()
         message.guild.channels.find('name', '✵-「suggest').sendEmbed(abod)
-    message.reply('**بنشوف اقتراحك**').then(msg => msg.delete(3000));
+    message.reply('**انتظر ليتم رؤية الاقتراح**').then(msg => msg.delete(3000));
     }
 });
 
@@ -703,7 +703,7 @@ client.on("message" , message=>{
                         })
 
                         }
-                        message.channel.send(' <a:3333:602171235815653396> | Role Has Been Created  ')//if the step completed
+                        message.channel.send(' <a:3333:602171235815653396> • Role Has Been Created  ')//if the step completed
                         }})
 
                         client.on('ready', () => {//new ready event
@@ -723,10 +723,10 @@ client.on("message" , message=>{
         var Me = new Discord.RichEmbed()
         .setColor('RANDOM')
         .setTimestamp()
-        .setTitle('**يوجد رسائل جديد فى خاص بوت ...**')
+        .setTitle('**يوجد شخص تحدث في البوت •**')
         .setThumbnail(`${message.author.avatarURL}`)
         .setDescription(`\n\n\`\`\`${message.content}\`\`\``)
-        .setFooter(`من عند ${message.author.tag} (${message.author.presence.status.toUpperCase()})`)
+        .setFooter(`name :  ${message.author.tag} (${message.author.presence.status.toUpperCase()})`)
     client.channels.get("602798406787792906").send({embed:Me});
     }
 });
@@ -734,7 +734,8 @@ client.on("message" , message=>{
 client.on('guildCreate', guild => {
     var embed = new Discord.RichEmbed()
     .setColor(0x5500ff)
-    .setDescription(`:gift_heart: | ** Thank You For Add BOT -} b!help  ** `)
+    .setDescription(`:gift_heart: | ** • Hey ! Thank You For Added Me • 
+• My PreFix Is : b! ** `)
         guild.owner.send(embed)
   });
 
@@ -755,7 +756,7 @@ client.on('guildCreate', guild => {
     .addField("**# - Time:**",message.createdAt,true)
     .setFooter("Thanks For Reporting It!")
 message.channel.send(Rembed)
-message.channel.send("Click ✅ To Send Report To __owner__ ").then(msg => {
+message.channel.send("Click ✅ To Send This Report To __owner__ ").then(msg => {
     msg.react("✅")
     msg.react("❌")
 .then(() => msg.react('❌'))
@@ -925,7 +926,7 @@ client.on('message', message =>{
     message.guild.createEmoji(`https://cdn.discordapp.com/emojis/${args}.png`, `${args}`).then(mysterry => {
 
     message.channel.send(`**Successfully Added { ${mysterry} } To The Emojilist**`)
-  }).catch(mystery => {message.channel.send(`**The Emoji ID is Wrong** 💢`)})
+  }).catch(mystery => {message.channel.send(`**The Emoji ID is Wrong** <a:123456:603970231408394260> `)})
   }
 });
 
