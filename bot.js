@@ -21,6 +21,8 @@ client.on("message", message => {
    message.react("<a:3333:602171235815653396>")
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
+      .addField("<a:123:604711152328638474>")
+  
       .addField("✵-「Help Commands")
 
       .addField("✺【 b!help  | To Show This Page | لعرض هذه الصفحة 】✺")
@@ -30,6 +32,8 @@ client.on("message", message => {
       .addField("✺【 b!helpM | To Show Help Member | لعرض مساعدة الاعضاء 】✺")
 
       .addField("✺【 b!helpH | To Show new Commands | لعرض الاوامر الجديدة 】✺")
+  
+      .addField("<a:123:604711152328638474>")
 
       message.channel.sendMessage({embed});
 
@@ -46,6 +50,8 @@ client.on("message", message => {
          message.react("<a:3333:602171235815653396>")
         const embed = new Discord.RichEmbed()
             .setColor("RANDOM")
+	    .addField("<a:123:604711152328638474>")
+	
             .addField("✵-「Admin Commands")
 
             .addField("✺【 b!ban  | To Ban Member | لحظر عضو من السيرفر 】✺")
@@ -67,6 +73,8 @@ client.on("message", message => {
             .addField("✺【 b!createrole | To Create Ranks On Server | لانشاء رتب في السيرفر 】✺")
 
             .addField("✺【 welcome  | يتم ترحيب عن طريق شات بأسم 】✺")
+	
+	    .addField("<a:123:604711152328638474>")
 
             message.channel.sendMessage({embed});
 
@@ -83,6 +91,8 @@ client.on("message", message => {
                message.react("<a:3333:602171235815653396>")
               const embed = new Discord.RichEmbed()
                   .setColor("RANDOM")
+	          .addField("<a:123:604711152328638474>")
+	      
                   .addField("✵-「Member Commands")
 
                   .addField("✺【 b!serverstats | To Show Stats Server | لعرض معلومات السيرفر 】✺")
@@ -108,6 +118,8 @@ client.on("message", message => {
                   .addField("✺【 b!image | To Show Server Photo | لعرض صورت السيرفر 】✺")
 
                   .addField("✺【 b!اقتراح | To Create suggest | لانشاء اقتراح 】✺")
+	      
+	          .addField("<a:123:604711152328638474>")
 
                   message.channel.sendMessage({embed});
 
@@ -148,11 +160,15 @@ client.on("message", message => {
    message.react("<a:3333:602171235815653396>")
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
+  .addField("<a:123:604711152328638474>")
+  
   .addField("**<a:2222:603662095791423499> | mc.hypixel.net  | #1**")
 
   .addField("**<a:2222:603662095791423499> | play.cubecraft.net  | #2**")
   
   .addField("**<a:2222:603662095791423499> | mineheroes.net  | #3**")
+  
+  .addField("<a:123:604711152328638474>")
   
   
    message.channel.sendMessage({embed});
@@ -336,10 +352,12 @@ client.on("message", message => {
                               message.guild.members.forEach(m => {
                          if(!message.member.hasPermission('ADMINISTRATOR')) return;
                                   var bc = new Discord.RichEmbed()
+				  .addField("<a:123:604711152328638474>")
                                   .addField("**<a:6666:603665822631723209> • New BroadCast **")
                                   .addField('***» ✠✚【 Server Name 】✚✠ :***', `${message.guild.name}`)
                                   .addField('***» ✠✚【 Sender 】✚✠ :*** ', `${message.author.username}#${message.author.discriminator}`)
                                   .addField('***» ✠✚【 Message 】✚✠ :*** ', args)
+				  .addField("<a:123:604711152328638474>")
                                   .setColor('#ff0000')
                                   // m.send(`[${m}]`);
                                   m.send(`${m}`,{embed: bc});
@@ -440,9 +458,9 @@ client.on("message", message => {
     let embed = new Discord.RichEmbed()
         .setColor('RANDOM')
         .setThumbnail(memberavatar)
-        .addField('🎽 | name :  ',`${member}`)
-        .addField('📢 | Thanks For Join Server' , `-=- Level : Soon -=-`)
-        .addField('🆔 | User ID :', "**[" + `${member.id}` + "]**" )
+        .addField(' name :  ',`${member}`)
+        .addField(' Thanks For Join Server' , `-=- Level : Soon -=-`)
+        .addField(' User ID :', "**[" + `${member.id}` + "]**" )
                 .addField('➡| Your Number :',`${member.guild.memberCount}`)
                      
                                      .addField(' Server', `${member.guild.name}`,true)
@@ -529,6 +547,8 @@ client.on('message', message => {
                                                        let embed = new Discord.RichEmbed()
                                                     .setAuthor(message.author.username)
                                                     .setColor("#9B59B6")
+						    .addField("<a:123:604711152328638474>")
+						       
                                                     .addField(" **<a:2222:603662095791423499> • b!skin [name]  • To Show Your Skin On MineCraft • لعرض سكنك في ماين كرافت** ")
 
                                                     .addField(" **<a:2222:603662095791423499> • b!head [name]  •  To Show Your Skin Head On MineCraft • لعرض رأس سكنك في ماين كرافت** ")
@@ -537,6 +557,8 @@ client.on('message', message => {
 
                                                     .addField(" **<a:2222:603662095791423499> • b!download [name] •  To Download Your Skin • لتحميل سكنك في ماين كرافت**")
 
+						    .addField("<a:123:604711152328638474>")
+							      
                                                     message.channel.sendEmbed(embed);
                                                       }
                                                   })
