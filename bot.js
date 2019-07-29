@@ -290,56 +290,6 @@ client.on("message", message => {
                            }
                         });
 
-client.on('message', message => {
-if (message.content.startsWith("kick")) {
-    var mention = message.mentions.members.first();
-    if(!mention) return message.channel.send("Member Name");
-
-    mention.kick("By : " + message.author.tag);
-    
-    message.channel.send("<a:4444:603662239257329677> Has Been Kicked From The Server " + mention.tag);
-};
-});
-
-                     client.on('message', message => {
-      if (message.author.x5bz) return;
-      if (!message.content.startsWith(prefix)) return;
-     
-      let command = message.content.split(" ")[0];
-      command = command.slice(prefix.length);
-     
-      let args = message.content.split(" ").slice(1);
-     
-      if (command == "ban") {
-                   if(!message.channel.guild) return message.reply('** This command only for servers**');
-             
-      if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return message.reply("**<a:123456:603970231408394260> You Don,t Have `Permession` To Ban This Member **");
-      if(!message.guild.member(client.user).hasPermission("BAN_MEMBERS")) return message.reply("**<a:123456:603970231408394260> You Don,t `Permession` To Ban This Member**");
-      let user = message.mentions.users.first();
-      let reason = message.content.split(" ").slice(2).join(" ");
-      /*let b5bzlog = client.channels.find("name", "5bz-log");
-     
-      if(!b5bzlog) return message.reply("I've detected that this server doesn't have a 5bz-log text channel.");*/
-      if (message.mentions.users.size < 1) return message.reply("**Member Name**");
-      if(!reason) return message.reply ("**Type The Raeson**");
-      if (!message.guild.member(user)
-      .bannable) return message.reply("**<a:123456:603970231408394260>i Can,t Ban This Member I Need `Permession` Rank**");
-     
-      message.guild.member(user).ban(7, user);
-     
-      const banembed = new Discord.RichEmbed()
-      .setAuthor(`BANNED!`, user.displayAvatarURL)
-      .setColor("RANDOM")
-      .setTimestamp()
-      .addField("**<a:4444:603662239257329677> | This Player Has Been Removed From The Server")
-      .addField("**User :**",  '**[ ' + `${user.tag}` + ' ]**')
-      .addField("**By :**", '**[ ' + `${message.author.tag}` + ' ]**')
-      .addField("**Reason :**", '**[ ' + `${reason}` + ' ]**')
-      message.channel.send({
-        embed : banembed
-      })
-    }
-    });
 
 
                         client.on('message', message => {
@@ -533,6 +483,25 @@ client.on('message', message => {
 
 });
 }});   
+
+client.on("ready", async  => {
+setInterval(function(){
+client.channels.find('id', '602792520824389632').setName("A");
+client.channels.find('id', '602792520824389632').setName("N");
+client.channels.find('id', '602792520824389632').setName("F");
+client.channels.find('id', '602792520824389632').setName("R ");
+client.channels.find('id', '602792520824389632').setName("E");
+client.channels.find('id', '602792520824389632').setName("N");
+client.channels.find('id', '602792520824389632').setName("ANFREN");
+client.channels.find('id', '602792520824389632').setName("B");
+client.channels.find('id', '602792520824389632').setName("O");
+client.channels.find('id', '602792520824389632').setName("T");
+client.channels.find('id', '602792520824389632').setName("BOT");
+client.channels.find('id', '602792520824389632').setName("ANFREN BOT ");
+client.channels.find('id', '602792520824389632').setName("IS");
+client.channels.find('id', '602792520824389632').setName("ONLINE");
+  }, 5000);
+});
 
                                                   client.on('message', message => {
                                                        if (message.content === "b!support") {
