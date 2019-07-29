@@ -21,7 +21,7 @@ client.on("message", message => {
    message.react("<a:3333:602171235815653396>")
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
-      .addField("<a:123:604711152328638474>")
+      .addField("<a:123:604711152328638474><a:123:604711152328638474><a:123:604711152328638474>")
   
       .addField("✵-「Help Commands")
 
@@ -33,7 +33,7 @@ client.on("message", message => {
 
       .addField("✺【 b!helpH | To Show new Commands | لعرض الاوامر الجديدة 】✺")
   
-      .addField("<a:123:604711152328638474>")
+      .addField("<a:123:604711152328638474><a:123:604711152328638474><a:123:604711152328638474>")
 
       message.channel.sendMessage({embed});
 
