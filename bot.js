@@ -237,36 +237,6 @@ client.on("message", message => {
                           }
                         });
 
-                        var prefix = "b!";
-
-                        client.on('message', message => {
-                          if (message.author.bot) return;
-                          if (!message.content.startsWith(prefix)) return;
-
-                          let command = message.content.split(" ")[0];
-                          command = command.slice(prefix.length);
-
-                          let args = message.content.split(" ").slice(1);
-
-                        //say
-                          if (command === "say") {
-                                  message.delete()
-                            message.channel.sendMessage(args.join(" ")).catch(console.error);
-                          }
-
-
-
-                        if (command == "embed") {
-                            let say = new Discord.RichEmbed()
-                            .setDescription(args.join("  "))
-                            .setColor(0x23b2d6)
-                            message.channel.sendEmbed(say);
-                            message.delete();
-                          }
-
-
-                        });
-
                         client.on("message", message => {
                          const prefix = "b!"
 
@@ -419,33 +389,8 @@ client.on("message", message => {
                                                                                   message.channel.sendEmbed(x5bz2);
                                                                               }
                                                                             }
-                                                  });
-
-
-          client.on('guildMemberAdd', member => {
-    let channel = member.guild.channels.find('name', 'welcome');
-    let memberavatar = member.user.avatarURL
-      if (!channel) return;
-    let embed = new Discord.RichEmbed()
-        .setColor('RANDOM')
-        .setThumbnail(memberavatar)
-        .addField(' name :  ',`${member}`)
-        .addField(' Thanks For Join Server' , `-=- Level : Soon -=-`)
-        .addField(' User ID :', "**[" + `${member.id}` + "]**" )
-                .addField('➡| Your Number :',`${member.guild.memberCount}`)
-                     
-                                     .addField(' Server', `${member.guild.name}`,true)
-                                       
-     .setFooter(`${member.guild.name}`)
-        .setTimestamp()
-   
-      channel.sendEmbed(embed);
-    });
+                                                  })
     
- 
- 
-	
-
 client.on('message', message => {
              if (!message.channel.guild) return;
       if (message.author.bot) return;
@@ -460,7 +405,7 @@ client.on('message', message => {
       let member = client.guilds.get(message.guild.id).members.get(message.author.id);
       let personalInvites = invs.filter(i => i.inviter.id === message.author.id);
       let inviteCount = personalInvites.reduce((p, v) => v.uses + p, 0);
-    return message.reply(`**Your Invites : ${inviteCount}**`)
+    return message.reply(`**Hey ! Your Invites Is  : ${inviteCount}**`)
 
 });
 }});   
@@ -913,7 +858,7 @@ client.on('guildMemberAdd', member=> {
 client.on('message' , message => {
 
                 if (message.author.bot) return;
-                if (message.content.startsWith(prefix + "contact")) {
+                if (message.content.startsWith(prefix + "WDR")) {
                 if (!message.channel.guild) return;
 
 
@@ -932,7 +877,7 @@ client.on('message' , message => {
 
                 let embed = new Discord.RichEmbed()
                      .setAuthor(message.author.username, message.author.avatarURL)
-                     .setDescription('📬 تم ارسال الرسالة الى صاحب البوت بنجاح')
+                     .setDescription('Done | Message Has Been Sent To Owner ')
                      .setThumbnail(message.author.avatarURL)
                                                                 
 
@@ -942,6 +887,205 @@ client.on('message' , message => {
                 }
                     
                 });
+
+lient.on('message', message => {
+  if (message.author.bot) return;
+
+  if (!message.content.startsWith(prefix)) return;
+
+  let command = message.content.split(" ")[0];
+  command = command.slice(prefix.length);
+
+  let args = message.content.split(" ").slice(1);
+
+// +say
+  if (command === "say") {
+if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
+  if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**You Don,t Have ` Permession ` To Use Command**' );
+          message.delete()
+    message.channel.sendMessage(args.join(" "))
+  }
+  
+ 
+
+if (command == "embed") {
+if(!message.channel.guild) return message.channel.send('**This Command For Server**').then(m => m.delete(5000));
+  if(!message.member.hasPermission('MANAGE_MESSAGES')) return      message.channel.send('**You Don,t Have ` Permession ` To Use Command** ' );
+    let say = new Discord.RichEmbed()
+    .setDescription(args.join("  "))
+    .setColor(0x23b2d6)
+    message.channel.sendEmbed(say);
+    message.delete();
+    
+  }
+
+
+
+});
+
+client.on('guildMemberAdd', member => {
+  member.guild.fetchInvites().then(guildInvites => {
+    const ei = invites[member.guild.id];
+    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
+    const inviter = client.users.get(invite.inviter.id);
+    const xkiller = member.guild.channels.find("name", "invite");
+     xkiller.send(`<@${member.user.id}> **Invited By :** <@${inviter.id}>`);
+  });
+});
+
+client.on('message', async message =>{
+const ms = require("ms");
+if (message.author.omar) return;
+if (!message.content.startsWith(prefix)) return;
+if(!message.channel.guild) return message.channel.send('**This Command For Servers*').then(m => m.delete(5000));
+if(!message.member.hasPermission('MANAGE_ROLES')) return
+if(!message.guild.member(client.user).hasPermission("MANAGE_ROLES")) return message.reply("**I Don't Have `MANAGE_ROLES` Permission**").then(msg => msg.delete(6000))
+var command = message.content.split(" ")[0];
+command = command.slice(prefix.length);
+var args = message.content.split(" ").slice(1);
+    if(command == "mute") {
+    let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    if(!tomute) return message.reply("**Member name**:x: ") .then(m => m.delete(5000));
+    if(tomute.hasPermission("MANAGE_MESSAGES"))return      message.channel.send('**i Don,t Have Permession** `MANAGE_MASSAGEES`');
+    let muterole = message.guild.roles.find(`name`, "muted");
+    //start of create role
+    if(!muterole){
+      try{
+        muterole = await message.guild.createRole({
+          name: "muted",
+          color: "#000000",
+          permissions:[]
+        })
+        message.guild.channels.forEach(async (channel, id) => {
+          await channel.overwritePermissions(muterole, {
+            SEND_MESSAGES: false,
+            ADD_REACTIONS: false
+          });
+        });
+      }catch(e){
+        console.log(e.stack);
+      }
+    }
+    //end of create role
+    let mutetime = args[1];
+    if(!mutetime) return message.reply("**Please select the time**:x:");
+  
+    await(tomute.addRole(muterole.id));
+    message.reply(`Mute Time : <@${tomute.id}> This Member Has Been Muted : ${ms(ms(mutetime))}`);
+    setTimeout(function(){
+      tomute.removeRole(muterole.id);
+      message.channel.send(`<@${tomute.id}> **Time has ended and has been decoded Mute**:white_check_mark: `);
+    }, ms(mutetime));
+  
+  
+
+  }
+if(command === `unmute`) {
+  if(!message.member.hasPermission("MANAGE_ROLES")) return message.channel.sendMessage("**You Don,t Have ` permession ` To UnMute This Member**:x: ").then(m => m.delete(5000));
+if(!message.guild.member(client.user).hasPermission("MANAGE_ROLES")) return message.reply("**I Don't Have `MANAGE_ROLES` Permission**").then(msg => msg.delete(6000))
+
+  let toMute = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
+  if(!toMute) return message.channel.sendMessage("**Member name**");
+
+  let role = message.guild.roles.find (r => r.name === "muted");
+  
+  if(!role || !toMute.roles.has(role.id)) return message.channel.sendMessage("**This Member Don,t Have Mute**")
+
+  await toMute.removeRole(role)
+  message.channel.sendMessage("**Done | Mute Has Been Removed From This Member**:white_check_mark:");
+
+  return;
+
+  }
+
+});
+client.on('message', message => {
+    if(message.content.includes('discord.gg/')) {
+        if(message.member.hasPermission('ADMINISTRATOR')) return;
+        message.delete();
+        message.guild.member(message.author).addRole(message.guild.roles.find(r => r.name === 'Muted'));
+        let embedP = new Discord.RichEmbed()
+        .setTitle('❌ |You Has Been Muted From This Server')
+        .setAuthor(message.author.username, message.author.avatarURL)
+        .addField(`**  If by mistake go to the administration | اذا كان عن طريق الغلط ف اذهب الى الادارة **`)
+        .setColor('RED')
+        .setThumbnail(message.author.avatarURL)
+        .setFooter(`${message.guild.name} Server`, message.guild.iconURL)
+        
+        message.channel.send(embedP);
+    }
+});
+
+client.on('message',async message => {
+  var room;
+  var title;
+  var duration;
+  var gMembers;
+  var filter = m => m.author.id === message.author.id;
+  if(message.content.startsWith(prefix + "giveaway")) {
+     //return message.channel.send(':heavy_multiplication_x:| **هذا الامر معطل حاليا.. ``حاول في وقت لاحق``**');
+    if(!message.guild.member(message.author).hasPermission('MANAGE_GUILD')) return message.channel.send(':heavy_multiplication_x:| **يجب أن يكون لديك خاصية التعديل على السيرفر**');
+    message.channel.send(`:eight_pointed_black_star:| **Please Type Room Name**`).then(msgg => {
+      message.channel.awaitMessages(filter, {
+        max: 1,
+        time: 20000,
+        errors: ['time']
+      }).then(collected => {
+        let room = message.guild.channels.find('name', collected.first().content);
+        if(!room) return message.channel.send(':heavy_multiplication_x:| **I could not find the desired Room**');
+        room = collected.first().content;
+        collected.first().delete();
+        msgg.edit(':eight_pointed_black_star:| **Type The Time Of GiveAway ,**').then(msg => {
+          message.channel.awaitMessages(filter, {
+            max: 1,
+            time: 20000,
+            errors: ['time']
+          }).then(collected => {
+            if(isNaN(collected.first().content)) return message.channel.send(':heavy_multiplication_x:| ** `**Please Re Type The Command``**');
+            duration = collected.first().content * 60000;
+            collected.first().delete();
+            msgg.edit(':eight_pointed_black_star:| **Type The Give Away Name**').then(msg => {
+              message.channel.awaitMessages(filter, {
+                max: 1,
+                time: 20000,
+                errors: ['time']
+              }).then(collected => {
+                title = collected.first().content;
+                collected.first().delete();
+                try {
+                  let giveEmbed = new Discord.RichEmbed()
+                  .setAuthor(message.guild.name, message.guild.iconURL)
+                  .setTitle(title)
+                  .setDescription(`المدة : ${duration / 60000} دقائق`)
+                  .setFooter(message.author.username, message.author.avatarURL);
+                  message.guild.channels.find('name', room).send(giveEmbed).then(m => {
+                     let re = m.react('🎉');
+                     setTimeout(() => {
+                       let users = m.reactions.get("🎉").users;
+                       let list = users.array().filter(u => u.id !== m.author.id);
+                       let gFilter = list[Math.floor(Math.random() * list.length) + 0];
+                         if(users.size === 1) gFilter = '**Not specified**';
+                       let endEmbed = new Discord.RichEmbed()
+                       .setAuthor(message.author.username, message.author.avatarURL)
+                       .setTitle(title)
+                       .addField('اGive Away Time End',`Won The GiveAway : ${gFilter}`)
+                       .setFooter(message.guild.name, message.guild.iconURL);
+                       m.edit(endEmbed);
+                     },duration);
+                   });
+                  msgg.edit(`:heavy_check_mark:| **Done**`);
+                } catch(e) {
+                  msgg.edit(`:heavy_multiplication_x:| **i Can,t Add GiveAway**`);
+                  console.log(e);
+                }
+              });
+            });
+          });
+        });
+      });
+    });
+  }
+});
 
 client.login(process.env.BOT_TOKEN);
 
