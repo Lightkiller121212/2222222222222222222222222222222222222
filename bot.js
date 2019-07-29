@@ -843,8 +843,8 @@ client.on('guildMemberAdd', member => {
         var embed = new Discord.RichEmbed()
         .setAuthor(member.user.username, member.user.avatarURL)
         .setThumbnail(member.user.avatarURL)
-        .setTitle(`نشالله ترجع تدخل`)
-        .setDescription(`الله معك نشالله نلتقي مرة ثانية `)
+        .setTitle(`Please Re Join`)
+        .setDescription(`Im Sad `)
         .addField('Members :',`**[ ${member.guild.memberCount} ]**`,true)
         .setColor('RED')
         .setFooter(`-=- Good Bay -=-`, 'https://cdn.discordapp.com/attachments/397818254439219217/399292026782351381/shy.png')
@@ -925,34 +925,39 @@ if(!message.channel.guild) return message.channel.send('**This Command For Serve
 
 });
 
-client.on('guildMemberAdd', member => {
-    var embed = new Discord.RichEmbed()
-    .setThumbnail(member.user.avatarURL)
-  .addField(" مرحبا في السيرفر " ,member.user.username )
-    .setDescription('شكرا لدخولك ')
-    .setColor('RANDOM')
-    .setImage('https://images-ext-2.discordapp.net/external/aC60oPHWWzZFtTTnkzL64JkX6SX_ofyMnjqxmCiSoDw/https/2.top4top.net/p_1225y7yza1.gif%27)
-var channel =member.guild.channels.find('name', 'مرحبا)
-if (!channel) return;
-channel.send({embed : embed});
-});
 
+
+client.on('guildMemberAdd', member => {
+    let channel = member.guild.channels.find('name', 'مرحبا');
+    let memberavatar = member.user.avatarURL
+      if (!channel) return;
+    let embed = new Discord.RichEmbed()
+        .setColor('RANDOM')
+        .setThumbnail(memberavatar)
+        .addField('اسم العضو :  ',`${member}`)
+        .addField('انت !' , `مرحبا في السيرفر, ${member}`)
+        .addField('User ID :', "**[" + `${member.id}` + "]**" )
+                .addField('➡| انت العضو رقم',`${member.guild.memberCount}`)
+               
+                  .addField("Name:",`<@` + `${member.id}` + `>`, true)
+                     
+                                     .addField('Server :', `${member.guild.name}`,true)
+                                       
+     .setFooter(`${member.guild.name}`)
+        .setTimestamp()
+   
+      channel.sendEmbed(embed);
+    });
+    
     client.on('guildMemberRemove', member => {
         var embed = new Discord.RichEmbed()
         .setAuthor(member.user.username, member.user.avatarURL)
         .setThumbnail(member.user.avatarURL)
-        .setTitle(الله معك 😔)
-        .setDescription(مع السلامة حبيبي)
-        .addField(':bust_in_silhouette:   تبقي',**[ ${member.guild.memberCount} ]**,true)
+        .setTitle(`نشالله ترجع تدخل`)
+        .setDescription(`الله معك نشالله نلتقي مرة ثانية `)
+        .addField('Members :',`**[ ${member.guild.memberCount} ]**`,true)
         .setColor('RED')
-        .setFooter(==== اتمنى تستمتعوا ====, 'https://images-ext-2.discordapp.net/external/cAchUD4PPtsDJRk-PHgkx1f3gt4wxS-xYAnc68SpU4s/https/6.top4top.net/p_12250i82f1.jpg%27)
-
-    var channel =member.guild.channels.find('name', 'مرحبا')
-    if (!channel) return;
-    channel.send({embed : embed});
-    })
-
-
+        .setFooter(`-=- مع السلامة -=-`, 'https://cdn.discordapp.com/attachments/397818254439219217/399292026782351381/shy.png')
 
 
 client.login(process.env.BOT_TOKEN);
