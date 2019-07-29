@@ -111,7 +111,7 @@ client.on("message", message => {
 
                   .addField("✺【 b!animal | To Show animal in photo | لعرض صور الحيوانات 】✺")
 
-                  .addField("✺【 b!minecraft | To Show MineCraft Help | لعرض مساعدة ماين كرافت 】✺")
+                  .addField("✺【 b!minecrafthelp | To Show MineCraft Help | لعرض مساعدة ماين كرافت 】✺")
 
                   .addField("✺【 b!avatar | To Show Your photo Or photo Friend | لعرض صوتك او صورت غيرك 】✺")
 
@@ -137,7 +137,7 @@ client.on("message", message => {
                     const embed = new Discord.RichEmbed()
                         .setColor("RANDOM")
                         .addField("✵-「New Commands :")
-                        .addField("✺【 b!minecraft | MineCraft Help | مساعدة ماين كرافت 】✺")
+                        .addField("✺【 b!minecrafthelp | MineCraft Help | مساعدة ماين كرافت 】✺")
 
                         .addField("✺【 b!createroles | Create Roles | انشاء رتب 】✺")
 
