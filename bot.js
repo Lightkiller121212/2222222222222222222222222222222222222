@@ -888,7 +888,7 @@ client.on('message' , message => {
                     
                 });
 
-lient.on('message', message => {
+client.on('message', message => {
   if (message.author.bot) return;
 
   if (!message.content.startsWith(prefix)) return;
