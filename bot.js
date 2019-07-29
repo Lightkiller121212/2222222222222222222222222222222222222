@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+onst Discord = require('discord.js');
 const client = new Discord.Client();
 
 client.on('ready', () => {
@@ -452,7 +452,6 @@ client.on("message", message => {
         .setThumbnail(member.user.avatarURL)
         .setTitle(`الله معاك ياحبيبي`)
         .setDescription(` نلتقي مرة ثانية نشالله `)
-        .addField('👤   Members :`**[ ${member.guild.memberCount} ]**`,true)
         .setColor('RED')
         .setFooter(`Good Bay | الى القاء`, 'https://cdn.discordapp.com/attachments/397818254439219217/399292026782351381/shy.png')
     
