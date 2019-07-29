@@ -70,6 +70,8 @@ client.on("message", message => {
 
             .addField("✺【 welcome  | يتم ترحيب عن طريق شات بأسم 】✺")
 	
+	    .addField("
+	
 	    .addField("<a:123:604711152328638474>")
 
             message.channel.sendMessage({embed});
@@ -923,7 +925,32 @@ if(!message.channel.guild) return message.channel.send('**This Command For Serve
 
 });
 
+client.on('guildMemberAdd', member => {
+    var embed = new Discord.RichEmbed()
+    .setThumbnail(member.user.avatarURL)
+  .addField(" مرحبا في السيرفر " ,member.user.username )
+    .setDescription('شكرا لدخولك ')
+    .setColor('RANDOM')
+    .setImage('https://images-ext-2.discordapp.net/external/aC60oPHWWzZFtTTnkzL64JkX6SX_ofyMnjqxmCiSoDw/https/2.top4top.net/p_1225y7yza1.gif%27)
+var channel =member.guild.channels.find('name', 'مرحبا)
+if (!channel) return;
+channel.send({embed : embed});
+});
 
+    client.on('guildMemberRemove', member => {
+        var embed = new Discord.RichEmbed()
+        .setAuthor(member.user.username, member.user.avatarURL)
+        .setThumbnail(member.user.avatarURL)
+        .setTitle(الله معك 😔)
+        .setDescription(مع السلامة حبيبي)
+        .addField(':bust_in_silhouette:   تبقي',**[ ${member.guild.memberCount} ]**,true)
+        .setColor('RED')
+        .setFooter(==== اتمنى تستمتعوا ====, 'https://images-ext-2.discordapp.net/external/cAchUD4PPtsDJRk-PHgkx1f3gt4wxS-xYAnc68SpU4s/https/6.top4top.net/p_12250i82f1.jpg%27)
+
+    var channel =member.guild.channels.find('name', 'مرحبا')
+    if (!channel) return;
+    channel.send({embed : embed});
+    })
 
 
 
