@@ -290,7 +290,7 @@ client.on("message", message => {
                            }
                         });
 
-lient.on('message', message => {
+client.on('message', message => {
 if (message.content.startsWith("kick")) {
     var mention = message.mentions.members.first();
     if(!mention) return message.channel.send("Member Name");
