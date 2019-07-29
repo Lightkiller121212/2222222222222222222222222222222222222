@@ -827,11 +827,11 @@ reaction2.on("collect", r => {
 client.on('message', message => {
 if (message.content.startsWith("kick")) {
     var mention = message.mentions.members.first();
-    if(!mention) return message.channel.send("يجب منشن العضو");
+    if(!mention) return message.channel.send("Member name");
 
     mention.kick("By: " + message.author.tag);
     
-    message.channel.send("تم أعطاء كيك الى : " + mention.tag);
+    message.channel.send("Done This Member Has Been Kicked : " + mention.tag);
 };
 });
 
@@ -847,8 +847,8 @@ if (message.content.startsWith("kick")) {
       if (command == "ban") {
                    if(!message.channel.guild) return message.reply('** This command only for servers**');
              
-      if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return message.reply("**You Don't Have ` BAN_MEMBERS ` Permission**");
-      if(!message.guild.member(client.user).hasPermission("BAN_MEMBERS")) return message.reply("**I Don't Have ` BAN_MEMBERS ` Permission**");
+      if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return message.reply("**<a:123456:603970231408394260> | You Don't Have ` BAN_MEMBERS ` Permission**");
+      if(!message.guild.member(client.user).hasPermission("BAN_MEMBERS")) return message.reply("**<a:123456:603970231408394260> | I Don't Have ` BAN_MEMBERS ` Permission**");
       let user = message.mentions.users.first();
       let reason = message.content.split(" ").slice(2).join(" ");
       /*let b5bzlog = client.channels.find("name", "5bz-log");
@@ -857,7 +857,7 @@ if (message.content.startsWith("kick")) {
       if (message.mentions.users.size < 1) return message.reply("**Member name**");
       if(!reason) return message.reply ("**Reason**");
       if (!message.guild.member(user)
-      .bannable) return message.reply("**I Can,t Ban This Member I Need  ` Top Rank  ` To Ban This Member**");
+      .bannable) return message.reply("**<a:123456:603970231408394260> | I Can,t Ban This Member I Need  ` Top Rank  ` To Ban This Member**");
      
       message.guild.member(user).ban(7, user);
      
