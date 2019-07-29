@@ -433,17 +433,63 @@ client.on("message", message => {
                                                   });
 
 
-                                                  client.on('guildMemberAdd', member => {
-                    var embed = new Discord.RichEmbed()
-                    .setThumbnail(member.user.avatarURL)
-                  .addField("***Thank You For Join Server***" ,member.user.username )
-                    .setDescription('**# ``-`` __Welcome__ **')// كلام ترحيب بعضو
-                    .setColor('RANDOM')
-                    .setImage('https://2.top4top.net/p_1225y7yza1.gif')// صور ترحيب
-                var channel =member.guild.channels.find('name', 'welcome')// اسم شات ترحيب
-                if (!channel) return;
-                channel.send({embed : embed});
-                });
+          client.on('guildMemberAdd', member => {
+    let channel = member.guild.channels.find('name', 'welcome');
+    let memberavatar = member.user.avatarURL
+      if (!channel) return;
+    let embed = new Discord.RichEmbed()
+        .setColor('RANDOM')
+        .setThumbnail(memberavatar)
+        .addField('🎽 | name :  ',`${member}`)
+        .addField('📢 | Thanks For Join Server' , `-=- Level : Soon -=-`)
+        .addField('🆔 | User ID :', "**[" + `${member.id}` + "]**" )
+                .addField('➡| Your Number :',`${member.guild.memberCount}`)
+                     
+                                     .addField(' Server', `${member.guild.name}`,true)
+                                       
+     .setFooter(`${member.guild.name}`)
+        .setTimestamp()
+   
+      channel.sendEmbed(embed);
+    });
+    
+    client.on('guildMemberRemove', member => {
+        var embed = new Discord.RichEmbed()
+        .setAuthor(member.user.username, member.user.avatarURL)
+        .setThumbnail(member.user.avatarURL)
+        .setTitle(`الله معاك ياحبيبي`)
+        .setDescription(` نلتقي مرة ثانية نشالله `)
+        .addField('👤   Members :`**[ ${member.guild.memberCount} ]**`,true)
+        .setColor('RED')
+        .setFooter(`Good Bay | الى القاء`, 'https://cdn.discordapp.com/attachments/397818254439219217/399292026782351381/shy.png')
+    
+    var channel =member.guild.channels.find('name', 'welcome')
+    if (!channel) return;
+    channel.send({embed : embed});
+    })
+client.on('guildMemberAdd', member=> {
+    member.addRole(member.guild.roles.find("name","Member")); //اسم الرتبة
+    });
+	
+
+client.on('message', message => {
+             if (!message.channel.guild) return;
+      if (message.author.bot) return;
+
+  if (!message.content.startsWith(prefix)) return;
+  let command = message.content.split(" ")[0];
+  command = command.slice(prefix.length);
+  let args = message.content.split(" ").slice(1);
+  
+  if (command === 'invites') {
+    message.guild.fetchInvites().then(invs => {
+      let member = client.guilds.get(message.guild.id).members.get(message.author.id);
+      let personalInvites = invs.filter(i => i.inviter.id === message.author.id);
+      let inviteCount = personalInvites.reduce((p, v) => v.uses + p, 0);
+    return message.reply(`**Your Invites : ${inviteCount}**`)
+
+});
+}});   
 
                                                   client.on('message', message => {
                                                        if (message.content === "b!support") {
