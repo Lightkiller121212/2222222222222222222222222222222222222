@@ -870,7 +870,45 @@ if (message.content.startsWith("kick")) {
     }
     });
 
-
+client.on('guildMemberAdd', member => {
+    let channel = member.guild.channels.find('name', 'welcome');
+    let memberavatar = member.user.avatarURL
+      if (!channel) return;
+    let embed = new Discord.RichEmbed()
+        .setColor('RANDOM')
+        .setThumbnail(memberavatar)
+        .addField('Member name :  ',`${member}`)
+        .addField('Hey !' , `Welcome to the server, ${member}`)
+        .addField('User ID :', "**[" + `${member.id}` + "]**" )
+                .addField('➡| انت العضو رقم',`${member.guild.memberCount}`)
+               
+                  .addField("Name:",`<@` + `${member.id}` + `>`, true)
+                     
+                                     .addField('Server :', `${member.guild.name}`,true)
+                                       
+     .setFooter(`${member.guild.name}`)
+        .setTimestamp()
+   
+      channel.sendEmbed(embed);
+    });
+    
+    client.on('guildMemberRemove', member => {
+        var embed = new Discord.RichEmbed()
+        .setAuthor(member.user.username, member.user.avatarURL)
+        .setThumbnail(member.user.avatarURL)
+        .setTitle(`نشالله ترجع تدخل`)
+        .setDescription(`الله معك نشالله نلتقي مرة ثانية `)
+        .addField('Members :',`**[ ${member.guild.memberCount} ]**`,true)
+        .setColor('RED')
+        .setFooter(`-=- Good Bay -=-`, 'https://cdn.discordapp.com/attachments/397818254439219217/399292026782351381/shy.png')
+    
+    var channel =member.guild.channels.find('name', 'welcome')
+    if (!channel) return;
+    channel.send({embed : embed});
+    })
+client.on('guildMemberAdd', member=> {
+    member.addRole(member.guild.roles.find("name","member")); //اسم الرتبة
+    });
 
 client.login(process.env.BOT_TOKEN);
 
