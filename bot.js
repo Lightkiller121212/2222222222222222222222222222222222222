@@ -70,7 +70,7 @@ client.on("message", message => {
 
             .addField("✺【 welcome  | يتم ترحيب عن طريق شات بأسم 】✺")
 	
-	    .addField("
+	    .addField("✺【 يتم الترحيب العربي عن طريق شات بأسم | مرحبا
 	
 	    .addField("<a:123:604711152328638474>")
 
